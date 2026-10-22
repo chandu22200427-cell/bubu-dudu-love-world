@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffe5ef">
+  <meta name="description" content="A tiny interactive Bubu & Dudu love world, full of cute moments, promises and animations.">
+  <title>Bubu & Dudu — Our Little Love World 💗</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient-background" aria-hidden="true">
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+    <div id="floatingDecor"></div>
+  </div>
+
+  <header class="topbar">
+    <a class="logo" href="#home" aria-label="Bubu and Dudu home">💗 Bubu &amp; Dudu 💗
+      <span>Our Little Love World</span>
+    </a>
+    <button id="musicButton" class="music-button" type="button" aria-pressed="false">♫ Music: Off</button>
+  </header>
+
+  <nav class="main-nav" aria-label="Main navigation">
+    <button data-go="0" class="nav-link active" type="button">Home</button>
+    <button data-go="2" class="nav-link" type="button">Moments</button>
+    <button data-go="3" class="nav-link" type="button">Activities</button>
+    <button data-go="4" class="nav-link" type="button">Promises</button>
+    <button data-go="1" class="nav-link" type="button">Special</button>
+    <button data-go="6" class="nav-link" type="button">Letter</button>
+    <button data-go="7" class="nav-link" type="button">Good Night</button>
+    <button data-go="8" class="nav-link" type="button">For You 💕</button>
+  </nav>
+
+  <main>
+    <div class="story-progress" id="progress" aria-label="Story scene navigation"></div>
+
+    <section class="slide active" id="home" aria-labelledby="homeTitle">
+      <span class="scene-label">1. Welcome · Interactive Entry</span>
+      <p class="eyebrow">A tiny world made just for you</p>
+      <h1 id="homeTitle">Hey, My Dudu! <span class="pink">♥</span></h1>
+      <p class="intro">Welcome to our little world, where every moment becomes a lovely memory.</p>
+
+      <div class="hero-scene">
+        <span class="decor decor-heart" aria-hidden="true">💗</span>
+        <span class="decor decor-flower" aria-hidden="true">🌸</span>
+        <span class="decor decor-star" aria-hidden="true">✨</span>
+        <div class="hero-bears character-pair">
+          <div class="character-image bubu-character" id="bubu">
+            <img src="assets/bubu-character.png" alt="Bubu, the cute brown bear" class="bear-image" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+            <span class="emoji-fallback" hidden>🐻</span>
+          </div>
+          <div class="character-image dudu-character" id="dudu">
+            <img src="assets/dudu-character.png" alt="Dudu, the cute white bear" class="bear-image" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+            <span class="emoji-fallback" hidden>🐼</span>
+          </div>
+          <span class="couple-heart" aria-hidden="true">💗</span>
+        </div>
+      </div>
+
+      <p class="scene-caption" id="heroCaption">Two little bears, a million reasons to smile. 🧸</p>
+      <button class="primary-button" id="startButton" type="button">Come Into Our World 💗 →</button>
+    </section>
+
+    <section class="slide" id="special" aria-labelledby="specialTitle">
+      <span class="scene-label">2. Why You Are Special</span>
+      <p class="eyebrow">A little reminder for you</p>
+      <h2 id="specialTitle">You Are So Special <span class="pink">♥</span></h2>
+      <p>Tap a glowing heart to discover a sweet message.</p>
+      <div class="heart-grid">
+        <button class="heart-card" data-message="You make me smile, even on ordinary days." type="button">💗<span>You Make Me Smile</span></button>
+        <button class="heart-card" data-message="You will always have a special place in my heart." type="button">💖<span>You Are Special</span></button>
+        <button class="heart-card" data-message="Being with you makes little moments magical." type="button">💕<span>My Favourite Person</span></button>
+        <button class="heart-card" data-message="You make my little world brighter." type="button">💘<span>You Make Life Better</span></button>
+        <button class="heart-card" data-message="Your happiness matters so much to me." type="button">💝<span>Your Smile Matters</span></button>
+        <button class="heart-card" data-message="Sending you the biggest bear hug!" type="button">❤️<span>One Big Hug</span></button>
+      </div>
+      <p class="activity-message" id="specialMessage" aria-live="polite">Choose a heart, my Dudu! 💗</p>
+    </section>
+
+    <section class="slide" id="moments" aria-labelledby="momentsTitle">
+      <span class="scene-label">3. Daily Moments</span>
+      <p class="eyebrow">Our favourite little adventures</p>
+      <h2 id="momentsTitle">Everyday With You ✨</h2>
+      <p>Choose a moment and watch our little world change.</p>
+      <div class="moment-grid">
+        <button class="moment-card" data-moment="eat" type="button"><span class="moment-art"><img src="assets/bubu-eat.png" alt="" onerror="this.hidden=true"><span>🍓 🐻 🐼</span></span><span>Eating Together</span></button>
+        <button class="moment-card" data-moment="movie" type="button"><span class="moment-art">🍿 🐻 🐼</span><span>Watching Movies</span></button>
+        <button class="moment-card" data-moment="sleep" type="button"><span class="moment-art"><img src="assets/bubu-sleep.png" alt="" onerror="this.hidden=true"><span>🌙 🐻 🐼</span></span><span>Sleeping Together</span></button>
+        <button class="moment-card" data-moment="play" type="button"><span class="moment-art"><img src="assets/bubu-play.png" alt="" onerror="this.hidden=true"><span>🎾 🐻 🐼</span></span><span>Playing Around</span></button>
+      </div>
+      <p class="activity-message" id="momentMessage" aria-live="polite">Which moment shall we enjoy? 💕</p>
+    </section>
+
+    <section class="slide" id="activities" aria-labelledby="activitiesTitle">
+      <span class="scene-label">4. Cute Interaction</span>
+      <p class="eyebrow">Let's make a happy memory</p>
+      <h2 id="activitiesTitle">What Should We Do? 🧸</h2>
+      <div class="activity-grid">
+        <button class="activity-button" data-action="hug" type="button">🤗<span>Hug Me</span></button>
+        <button class="activity-button" data-action="kiss" type="button">😘<span>Give a Kiss</span></button>
+        <button class="activity-button" data-action="play" type="button">🎮<span>Play With Me</span></button>
+        <button class="activity-button" data-action="eat" type="button">🍓<span>Feed Me</span></button>
+        <button class="activity-button" data-action="laugh" type="button">😊<span>Make Me Laugh</span></button>
+        <button class="activity-button" data-action="dance" type="button">🎵<span>Dance With Me</span></button>
+      </div>
+      <div class="activity-stage" id="activityStage">
+        <div class="activity-pair" id="activityCharacters" aria-label="Bubu and Dudu">🐻 💗 🐼</div>
+      </div>
+      <p class="activity-message" id="activityMessage" aria-live="polite">Tap an activity to see the magic!</p>
+    </section>
+
+    <section class="slide" id="promises" aria-labelledby="promisesTitle">
+      <span class="scene-label">5. Little Promises</span>
+      <p class="eyebrow">Tiny promises, big feelings</p>
+      <h2 id="promisesTitle">My Little Promises to You 💗</h2>
+      <div class="promise-grid">
+        <button class="promise-card" type="button">💌<span>I will always support you.</span></button>
+        <button class="promise-card" type="button">🌷<span>I will always be by your side.</span></button>
+        <button class="promise-card" type="button">😊<span>I will try to make you smile.</span></button>
+        <button class="promise-card" type="button">🧸<span>I will always care for you.</span></button>
+      </div>
+      <p class="activity-message" id="promiseMessage" aria-live="polite">Tap a promise to keep it close to your heart. 💕</p>
+    </section>
+
+    <section class="slide" id="question" aria-labelledby="questionTitle">
+      <span class="scene-label">6. A Cute Question</span>
+      <p class="eyebrow">One tiny question for you</p>
+      <h2 id="questionTitle">Will You Stay in My Little World? 💗</h2>
+      <div class="question-scene"><span>🐻</span><span class="rose">🌹</span><span>🐼</span></div>
+      <div class="answer-buttons">
+        <button class="primary-button answer" data-answer="yes" type="button">Yes, Always! ❤️</button>
+        <button class="secondary-button answer" data-answer="maybe" type="button">Maybe 😊</button>
+        <button class="primary-button answer" data-answer="forever" type="button">Forever &amp; Ever! 💕</button>
+      </div>
+      <p class="activity-message" id="answerMessage" aria-live="polite"></p>
+    </section>
+
+    <section class="slide" id="letter" aria-labelledby="letterTitle">
+      <span class="scene-label">7. Love Message</span>
+      <p class="eyebrow">A message from my heart</p>
+      <h2 id="letterTitle">A Little Letter for You 💌</h2>
+      <div class="letter-paper">
+        <p id="typedMessage"></p>
+        <button class="primary-button" id="letterButton" type="button">Open My Letter 💌</button>
+      </div>
+    </section>
+
+    <section class="slide night-scene" id="goodnight" aria-labelledby="nightTitle">
+      <span class="scene-label">8. Good Night</span>
+      <p class="eyebrow">Even under different skies</p>
+      <h2 id="nightTitle">Sweet Dreams, My Bubu 🌙</h2>
+      <p>No matter the distance, no matter the time…</p>
+      <p class="night-message">You will always be in my heart. ❤️</p>
+      <div class="sleeping-bears"><span>🐻</span><span>💤</span><span>🐼</span></div>
+      <p>Sending you a thousand sleepy hugs. ✨</p>
+    </section>
+
+    <section class="slide" id="final" aria-labelledby="finalTitle">
+      <span class="scene-label">9. Our Little Finale</span>
+      <p class="eyebrow">One last little thing</p>
+      <h1 id="finalTitle">Thank You for Being You 💗</h1>
+      <p>Here's to more laughter, little adventures, and lovely memories.</p>
+      <div class="final-bears"><span>🐻</span><span class="final-heart">💕</span><span>🐼</span></div>
+      <button class="primary-button" id="loveButton" type="button">I Love You! ❤️</button>
+      <button class="secondary-button" id="restartButton" type="button">Start Our Story Again ↻</button>
+      <p class="activity-message" id="finalMessage" aria-live="polite"></p>
+    </section>
+
+    <div class="story-controls">
+      <button class="secondary-button" id="prevButton" type="button">← Previous</button>
+      <span id="sceneCounter">Scene 1 of 9</span>
+      <button class="primary-button" id="nextButton" type="button">Next →</button>
+    </div>
+  </main>
+
+  <footer>Made with love, tiny bears and a little bit of magic 💗</footer>
+  <script src="script.js"></script>
+</body>
+</html>
